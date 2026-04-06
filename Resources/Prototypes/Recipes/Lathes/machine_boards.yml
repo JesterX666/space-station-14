@@ -299,6 +299,10 @@
   id: FatExtractorMachineCircuitboard
   result: FatExtractorMachineCircuitboard
 
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  id: DeepFryerMachineCircuitboard
+  result: DeepFryerMachineCircuitboard
 ## Supply
 
 - type: latheRecipe

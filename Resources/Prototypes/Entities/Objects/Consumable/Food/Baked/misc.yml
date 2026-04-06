@@ -781,6 +781,8 @@
             Quantity: 1
           - ReagentId: Vitamin
             Quantity: 1
+    - type: Fryable
+      burnTime: 15
 
 - type: entity
   parent: FoodBakedBase

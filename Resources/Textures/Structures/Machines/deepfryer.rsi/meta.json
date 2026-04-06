@@ -1,0 +1,29 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from /tg/station at commit eb69c087f1e77da1357d7305a93acebdfdac723e, edited by github user @Flareguy for Space Station 14, inhands by BoskiYourk (GitHub)",
+    "states": [
+        {
+            "name": "fryer_on",
+            "delays": [ [ 0.1, 0.1, 0.1, 0.1, 0.1 ] ]
+        },
+        {
+            "name": "fryer_off"
+        },
+        {
+            "name": "fryer_start",
+            "delays": [ [ 0.1, 0.1, 0.1, 0.1 ] ]
+        },
+        {
+            "name": "fryer_stop",
+            "delays": [ [ 0.1, 0.1, 0.1, 0.1 ] ]
+        },
+        {
+            "name": "fryer_greasy"
+        }
+    ]
+}

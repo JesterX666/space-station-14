@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: AutolatheMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: autolathe machine board
@@ -1057,6 +1057,20 @@
       state: service
     - type: MachineBoard
       prototype: SyndicateMicrowave
+      stackRequirements:
+        Manipulator: 1
+        Glass: 2
+        Cable: 2
+
+- type: entity
+  id: DeepFryerMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: deep fryer machine board
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: DeepFryer
       stackRequirements:
         Manipulator: 1
         Glass: 2

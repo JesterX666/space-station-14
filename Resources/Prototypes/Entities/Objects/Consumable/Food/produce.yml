@@ -1417,6 +1417,8 @@
           Quantity: 1
         - ReagentId: Vitamin
           Quantity: 1
+  - type: Fryable
+    result: FoodOnionRings
   - type: Tag
     tags:
     - Vegetable

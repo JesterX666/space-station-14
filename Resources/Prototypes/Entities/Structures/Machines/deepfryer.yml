@@ -1,0 +1,71 @@
+- type: entity
+  id: DeepFryer
+  parent: BaseMachinePowered
+  name: deepfryer
+  description: Cooks food by submerging it in hot oil.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: DeepFryer
+    capacity: 8
+    frying: fryer_on
+    idle: fryer_off
+    basket_inserting: fryer_start
+    basket_retracting: fryer_stop
+    basket_inserting_sound: /Audio/Machines/deep_fryer_immerse.ogg
+    basket_retracting_sound: /Audio/Machines/deep_fryer_emerge.ogg
+    frying_sound:  /Audio/Machines/deep_fryer_frying.ogg
+    add_item_sound: /Audio/Machines/deep_fryer_add_item.ogg
+    time_until_greasy: 30
+    grease_color: '#C59471B0'
+  - type: Pullable
+  - type: Anchorable
+  - type: Appearance
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.1,0.35,0.75"
+        density: 190
+        mask:
+        - MachineMask
+        layer:
+          - MachineLayer
+  - type: Sprite
+    sprite: Structures/Machines/deepfryer.rsi
+    drawdepth: SmallObjects
+    snapCardinals: true
+    layers:
+    - state: fryer_off
+      map: ["enum.DeepFryerVisualizerLayers.Idle"]
+    - state: fryer_on
+      map: ["enum.DeepFryerVisualizerLayers.Frying"]
+      visible: false
+    - state: fryer_start
+      visible: false
+      map: ["enum.DeepFryerVisualizerLayers.Inserting"]
+    - state: fryer_stop
+      map: ["enum.DeepFryerVisualizerLayers.Retracting"]
+      visible: false
+    - state: fryer_greasy
+      map: ["enum.DeepFryerVisualizerLayers.Greasy"]  
+      visible: false
+  - type: ApcPowerReceiver
+    powerLoad: 400
+  - type: Machine
+    board: DeepFryerMachineCircuitboard
+  - type: ContainerContainer
+    containers:
+      deepfryer_entity_container: !type:Container
+      machine_board: !type:Container
+      machine_parts: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - deepfryer_entity_container
+  - type: GuideHelp
+    guides:
+    - Chef
+    - FoodRecipes
